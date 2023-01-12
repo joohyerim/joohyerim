@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const max = 19;
+        let count = 1;
+
+        function roll(){
+                     count = count %max;
+                     count++;
+
+                     const tag = document.querySelector("#doll");
+                     const counter = "0" + count;
+                     tag.src = "doll/doll-" + counter.slice(-2) +".jpeg";
+
+        }
+
+        window.onload = function() {
+                        setInterval(roll, 100);
+
+        }
+    </script>
+</head>
+<body>
+    <img id="doll" vidth="585" height ="650"  src="doll/doll-01.jpeg">
+</body>
+</html>

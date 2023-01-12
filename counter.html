@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터</title>
+
+    <script>
+        let count = 0;
+        const img = [
+             "https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/98a9c786-6a6f-4f4a-9b14-829e7ef94f48.png",
+             "https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/05b4c5fc-7150-4726-bcfe-c27f8753d2de.png",
+             "https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/8ebb46de-783c-4beb-aebb-7b70dfbdef5b.png",
+             "https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/c73535d9-13e6-4945-a94f-377e7973ed0b.png",
+             "https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/a1f8abbd-4bab-49b6-9a89-72b2d0afaad6.png",
+
+        ];
+       function counter() {
+           // alert("클릭했습니다");
+
+           count++;
+
+           count = count % 6;
+
+           console.log(count);
+
+           const tag = document.querySelector("h1");
+           tag.textContent = "카운트: " + count;
+             }
+
+             function roll() {
+                    count++;
+                    count = count % 5;
+
+                    const tag = document.querySelector("img");
+                    tag.src = img[count];
+             }
+
+             function timer(mode) {
+                    if(mode == 1)
+                       setInterval(counter, 1000);
+                    else
+                       setInterval(roll, 1000);
+             }
+
+    </script>
+</head>
+<body>
+    <h1>count: 0</h1>
+        <div>
+            <button onclick="counter()">click</button>
+        </div>
+        <div>
+            <button onclick="timer(1)">auto count</button>
+        </div>
+        <div>
+            <button onclick="timer(2)">auto roll</button>
+        </div>
+        <div>
+            <img src=" https://d1cua0vf0mkpiy.cloudfront.net/images/menu/normal/98a9c786-6a6f-4f4a-9b14-829e7ef94f48.png">
+        </div>
+</body>
+</html>
